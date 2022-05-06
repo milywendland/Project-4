@@ -53,7 +53,7 @@ const main = async () => {
     {
       name: 'Mochi Ice Cream - Melted in the Microwave',
       type: 'Snack',
-      buff: 'Mood'
+      buff: 'Health'
     },
     {
       name: 'BTS Light Stick',
@@ -158,7 +158,7 @@ const main = async () => {
     {
       name: 'Bagel',
       type: 'Snack',
-      buff: 'Mood'
+      buff: 'Health'
     },
     {
       name: 'Pokemon Ball',
@@ -194,6 +194,66 @@ const main = async () => {
       name: 'Incense Stick',
       type: 'Misc',
       buff: 'Mood'
+    },
+    {
+      name: 'The Holy Bible',
+      type: 'Book',
+      buff: 'Knowledge'
+    },
+    {
+      name: 'Aeropress',
+      type: 'Misc',
+      buff: 'Personality'
+    },
+    {
+      name: 'Chemex',
+      type: 'Misc',
+      buff: 'Personality'
+    },
+    {
+      name: 'Onigiri',
+      type: 'Snack',
+      buff: 'Health'
+    },
+    {
+      name: 'Mcflurry',
+      type: 'Treasure',
+      buff: 'Health'
+    },
+    {
+      name: 'Cookie',
+      type: 'Snack',
+      buff: 'Health'
+    },
+    {
+      name: 'Bonsai Tree',
+      type: 'Misc',
+      buff: 'Mood'
+    },
+    {
+      name: 'Fidget Spinner',
+      type: 'Toy',
+      buff: 'Mood'
+    },
+    {
+      name: 'Jean Vest with Patches',
+      type: 'Misc',
+      buff: 'Personality'
+    },
+    {
+      name: 'Soft Pretzel',
+      type: 'Snack',
+      buff: 'Health'
+    },
+    {
+      name: '[USA] by Anamanaguchi',
+      type: 'Album',
+      buff: 'Mood'
+    },
+    {
+      name: 'Hydroflask',
+      type: 'Misc',
+      buff: 'Health'
     }
   ]
 
