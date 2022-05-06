@@ -26,6 +26,61 @@ a {
   color: whitesmoke;
 }
 
+.home img {
+  height:250px;
+}
+
+.about a{
+  color:rgb(70, 169, 255);
+}
+
+.signin{
+  height: 170px;
+  width: 200px;
+  border: 2px solid rgb(70, 169, 255);
+  margin: auto;
+  padding-top: 15px;
+  margin-bottom: 10px;
+}
+
+
+.signin input{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.register-b{
+  margin: auto;
+
+}
+
+button{
+  height: 30px;
+  width: 75px;
+  background-color: rgb(70, 169, 255);
+  color: white;
+  border-radius: 6px;
+}
+
+button:hover{
+  background-color: white;
+  color:rgb(70, 169, 255);
+}
+
+.signup{
+  height: 240px;
+  width: 200px;
+  border: 1px solid rgb(70, 169, 255);
+  margin: auto;
+  margin-top: 10px;
+  padding-top: 10px;
+}
+
+.signup input{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
 .console img{
   margin-top: 20px;
   height: 600px;

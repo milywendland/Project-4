@@ -5,6 +5,7 @@ import { Routes, Route } from 'react-router-dom'
 import Home from './pages/home'
 import Gameplay from './pages/gameplay'
 import About from './pages/about'
+import SignUp from './pages/signup'
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/gameplay" element={<Gameplay />} />
             <Route path="/about" element={<About />} />
+            <Route path="/signup" element={<SignUp />} />
           </Routes>
         </main>
       </div>
