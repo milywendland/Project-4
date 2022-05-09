@@ -19,11 +19,18 @@ nav {
   background-size: 100vw;
   padding-top: 20px;
   padding-bottom: 20px;
+  font-family: 'Play', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
 }
 
 a {
   text-decoration: none;
   color: whitesmoke;
+}
+
+nav a:hover{
+  color:rgb(209, 255, 23);
 }
 
 .home img {
@@ -129,7 +136,7 @@ button:hover{
   background-color: blueviolet;
   position: absolute;
   left: 580px;
-  top: 120px;
+  top: 125px;
 }
 
 .gameplay button{
