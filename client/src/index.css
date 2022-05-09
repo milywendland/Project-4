@@ -41,17 +41,18 @@ a {
   margin: auto;
   padding-top: 15px;
   margin-bottom: 10px;
+  font-family: 'Play', sans-serif;
 }
 
 
 .signin input{
   margin-top: 10px;
   margin-bottom: 10px;
+  font-family: 'Play', sans-serif;
 }
 
 .register-b{
   margin: auto;
-
 }
 
 button{
@@ -60,6 +61,7 @@ button{
   background-color: rgb(70, 169, 255);
   color: white;
   border-radius: 6px;
+  font-family: 'Play', sans-serif;
 }
 
 button:hover{
@@ -84,4 +86,86 @@ button:hover{
 .console img{
   margin-top: 20px;
   height: 600px;
+  margin-bottom: 20px;
+}
+
+.gameplay button{
+  height: 45px;
+  width: 100px;
+  margin-top: 20px;
+}
+
+.choose-pet h2{
+  margin-bottom: 30px;
+}
+
+.pet-wrapper{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 450px;
+  margin: auto;
+}
+
+.tanuki-create{
+  margin-right: 10px;
+  height: 150px;
+  border: solid rgb(23, 255, 104) 1px;
+  border-radius: 200px;
+  margin-bottom: 10px;
+}
+
+.tanuki-create:hover{
+  background-color:rgb(23, 255, 104) ;
+}
+
+.tanuki-create img{
+  height: 200px;
+}
+
+.kappa-create{
+  margin-right: 10px;
+  height: 150px;
+  border: solid rgb(23, 255, 104) 1px;
+  border-radius: 200px;
+  margin-top: 10px;
+}
+
+.kappa-create:hover{
+  background-color:rgb(23, 255, 104) ;
+}
+
+.kappa-create img{
+  height: 200px;
+  
+}
+
+.canti-create{
+  margin-left: 10px;
+  height: 150px;
+  border: solid rgb(23, 255, 104) 1px;
+  border-radius: 200px;
+  margin-top: 10px;
+}
+
+.canti-create:hover{
+  background-color:rgb(23, 255, 104) ;
+}
+
+.canti-create img{
+  height: 150px;
+}
+
+.kitsune-create{
+  margin-left: 10px;
+  height: 150px;
+  border: solid rgb(23, 255, 104) 1px;
+  border-radius: 200px;
+}
+
+.kitsune-create:hover{
+  background-color:rgb(23, 255, 104) ;
+}
+
+.kitsune-create img{
+  height: 150px;
 }

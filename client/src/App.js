@@ -6,6 +6,8 @@ import Home from './pages/home'
 import Gameplay from './pages/gameplay'
 import About from './pages/about'
 import SignUp from './pages/signup'
+import ChoosePet from './pages/choosepet'
+import Profile from './pages/profile'
 
 function App() {
   return (
@@ -18,6 +20,8 @@ function App() {
             <Route path="/gameplay" element={<Gameplay />} />
             <Route path="/about" element={<About />} />
             <Route path="/signup" element={<SignUp />} />
+            <Route path="/choosepet" element={<ChoosePet />} />
+            <Route path="/profile" element={<Profile />} />
           </Routes>
         </main>
       </div>

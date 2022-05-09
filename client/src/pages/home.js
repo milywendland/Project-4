@@ -19,12 +19,16 @@ const Home = () => {
             Password:
             <input type="text" placeholder="password" />
           </label>
-          <input type="submit" value="submit" />
+          <input
+            type="submit"
+            value="SUBMIT"
+            onClick={() => navigate('/profile')}
+          />
         </form>
       </div>
       <div clasName="register-b">
-        <h3>Register Here:</h3>
-        <button onClick={() => navigate('/signup')}>Register</button>
+        <h3>Sign Up Here:</h3>
+        <button onClick={() => navigate('/signup')}>SIGN UP</button>
       </div>
     </div>
   )
