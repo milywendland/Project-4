@@ -1,6 +1,15 @@
 const res = require('express/lib/response')
 const { Pet } = require('../models/index')
 
+const getAllPets = async (req, res) => {
+  try {
+    const pets = await Pet.find()
+    return res.status(200).json({ pets })
+  } catch (error) {
+    return res.status(500).send(error.message)
+  }
+}
+
 const getPetById = async (req, res) => {
   try {
     const { id } = req.params
@@ -42,6 +51,7 @@ const deletePet = async (req, res) => {
 }
 
 module.exports = {
+  getAllPets,
   getPetById,
   editPet,
   deletePet
