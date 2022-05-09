@@ -3,8 +3,8 @@ const routes = require('./routes')
 const db = require('./db')
 const cors = require('cors')
 const logger = require('morgan')
+const { Pet } = require('./models')
 const PORT = process.env.PORT || 3001
-const { auth } = require('express-openid-connect')
 
 const app = express()
 
@@ -18,8 +18,4 @@ db.on('error', console.error.bind(console, 'MongoDB connection error:'))
 
 app.listen(PORT, () => {
   console.log(`Express server listening on port ${PORT}`)
-})
-
-app.get('/', (req, res) => {
-  res.send(req.oidc.isAuthenticated() ? 'Logged in' : 'Logged out')
 })
