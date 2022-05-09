@@ -83,10 +83,45 @@ button:hover{
   margin-bottom: 10px;
 }
 
+.console-pet img{
+  height: 300px;
+  position:absolute;
+  left: 440px;
+  top: 175px;
+}
+
 .console img{
   margin-top: 20px;
   height: 600px;
   margin-bottom: 20px;
+  position: relative;
+}
+
+.left-button{
+  height: 35px;
+  width: 25px;
+  background-color: aquamarine;
+  position: absolute;
+  right: 650px;
+  top: 375px;
+}
+
+.right-button{
+  height: 35px;
+  width: 25px;
+  background-color:rgb(209, 255, 23);
+  position: absolute;
+  right: 555px;
+  top: 375px;
+}
+
+.surprise-button{
+  height: 20px;
+  width: 30px;
+  background-color: blueviolet;
+  position: absolute;
+  left: 580px;
+  top: 120px;
 }
 
 .gameplay button{
