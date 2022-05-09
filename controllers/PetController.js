@@ -3,8 +3,8 @@ const { Pet } = require('../models/index')
 
 const getAllPets = async (req, res) => {
   try {
-    const pets = await Pet.find()
-    return res.status(200).json({ pets })
+    const pet = await Pet.find()
+    return res.status(200).json({ pet })
   } catch (error) {
     return res.status(500).send(error.message)
   }
