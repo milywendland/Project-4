@@ -6,7 +6,8 @@ const Gift = new Schema(
   {
     name: { type: String, required: true },
     type: { type: String, required: true },
-    buff: { type: String, required: true }
+    buff: { type: String, required: true },
+    buffAmount: { type: Number, required: true }
   },
   { timestamps: true }
 )

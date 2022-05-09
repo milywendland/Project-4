@@ -5,15 +5,16 @@ const Schema = mongoose.Schema
 const Pet = new Schema(
   {
     name: { type: String, required: true },
-    health: { type: Number, required: true },
+    type: { type: String, requred: true },
+    maxhealth: { type: Number, required: true },
     age: { type: Number, required: true },
     mood: { type: String, required: true },
-    lastfed: { type: Date, required: true },
-    lastwalked: { type: Date, required: true },
-    lastplayed: { type: Date, required: true },
+    lastfed: { type: Date, required: false },
+    lastwalked: { type: Date, required: false },
+    lastplayed: { type: Date, required: false },
     gifts: [{ type: Schema.Types.ObjectId, ref: 'gifts' }],
-    personality: { type: String, required: true },
-    skills: { type: Array, required: true }
+    skills: { type: Array, required: true },
+    img: { type: String, required: true }
   },
   { timestamps: true }
 )
