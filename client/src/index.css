@@ -222,9 +222,11 @@ button:hover{
 
 
 @media only screen
-and (min-device-width: 414px)
-and (min-device-height: 896px)
+and (device-width: 414px)
+and (device-height: 896px)
 {
+  /* console page */
+
   .console-pet img{
     height: 200px;
     position:absolute;
@@ -272,5 +274,68 @@ and (min-device-height: 896px)
     position: absolute;
     left: 125px;
     top: 120px;
+  }
+
+/* choose pet page */
+
+  .pet-wrapper{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 350px;
+    margin: auto;
+  }
+  
+  .tanuki-create{
+    margin-right: 10px;
+    height: 100px;
+    border: solid rgb(23, 255, 104) 2px;
+    border-radius: 200px;
+    margin-bottom: 10px;
+  }
+  
+
+  
+  .tanuki-create img{
+    height: 100px;
+  }
+  
+  .kappa-create{
+    margin-right: 10px;
+    height: 100px;
+    border: solid rgb(23, 255, 104) 2px;
+    border-radius: 200px;
+    margin-top: 10px;
+  }
+  
+ 
+  
+  .kappa-create img{
+    height: 100px;
+    
+  }
+  
+  .canti-create{
+    margin-left: 10px;
+    height: 100px;
+    border: solid rgb(23, 255, 104) 2px;
+    border-radius: 200px;
+    margin-top: 10px;
+  }
+  
+  
+  .canti-create img{
+    height: 75px;
+  }
+  
+  .kitsune-create{
+    margin-left: 10px;
+    height: 100px;
+    border: solid rgb(23, 255, 104) 2px;
+    border-radius: 200px;
+  }
+  
+  
+  .kitsune-create img{
+    height: 75px;
   }
 }
