@@ -88,6 +88,13 @@ button:hover{
   position:absolute;
   left: 440px;
   top: 175px;
+  animation: float 3s ease-out infinite;
+}
+
+@keyframes float {
+  50% {
+     transform: translate(0, 10px);
+  }
 }
 
 .console img{
@@ -95,6 +102,7 @@ button:hover{
   height: 600px;
   margin-bottom: 20px;
   position: relative;
+  
 }
 
 .left-button{
