@@ -14,4 +14,13 @@ const getGiftById = async (req, res) => {
   }
 }
 
-module.exports = [getGiftById]
+const getAllGifts = async (req, res) => {
+  try {
+    const gift = await Gift.find()
+    return res.status(200).json({ gift })
+  } catch (error) {
+    return res.status(500).send(error.message)
+  }
+}
+
+module.exports = [getGiftById, getAllGifts]
