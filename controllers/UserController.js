@@ -1,58 +1,80 @@
-const jwt = require('jsonwebtoken')
-const bcrypt = require('bcrypt')
-const mongoose = require('mongoose')
-const { User } = mongoose.model('User')
-const res = require('express/lib/response')
+const { User } = require('../models')
+const middleware = require('../middleware')
 
-exports.register = function (req, res) {
-  var newUser = new User(req.body)
-  newUser.hash_password = bcrypt.hashSync(req.body.password, 10)
-  newUser.save(function (err, user) {
-    if (err) {
-      return res.status(400).send({
-        message: err
-      })
-    } else {
-      user.hash_password = undefined
-      return res.json(user)
-    }
-  })
-}
-
-exports.signin = function (req, res) {
-  User.findOne(
-    {
-      email: req.body.email
-    },
-    function (err, user) {
-      if (err) throw err
-      if (!user || !user.comparePassword(req.body.password)) {
-        return res
-          .status(401)
-          .json({ message: 'Authentication failed. Invalid user or password.' })
+const login = async (req, res) => {
+  try {
+    const user = await User.findOne({
+      where: { username: req.body.username },
+      raw: true
+    })
+    if (
+      user &&
+      (await middleware.comparePassword(user.passwordDigest, req.body.password))
+    ) {
+      let payload = {
+        id: user.id,
+        username: user.username
       }
-      return res.json({
-        token: jwt.sign(
-          { email: user.email, fullName: user.fullName, _id: user._id },
-          'RESTFULAPIs'
-        )
-      })
+      let token = middleware.createToken(payload)
+      res.send({ user: payload, token })
     }
-  )
+  } catch (error) {
+    res.status(401).send({ status: 'Error', msg: 'Unauthorized' })
+    throw error
+  }
 }
 
-exports.loginRequired = function (req, res, next) {
-  if (req.user) {
-    next()
-  } else {
-    return res.status(401).json({ message: 'Unauthorized user!!' })
+const register = async (req, res) => {
+  try {
+    const { username, password } = req.body
+    let passwordDigest = await middleware.hashPassword(password)
+    const user = await User.create({ username, passwordDigest })
+    res.send(user)
+  } catch (error) {
+    throw error
   }
 }
-exports.profile = function (req, res, next) {
-  if (req.user) {
-    res.send(req.user)
-    next()
-  } else {
-    return res.status(401).json({ message: 'Invalid token' })
+
+const updatePassword = async (req, res) => {
+  try {
+    const user = await User.findOne({ where: { id: req.body.id } })
+    if (
+      user &&
+      (await middleware.comparePassword(
+        user.dataValues.passwordDigest,
+        req.body.oldPassword
+      ))
+    ) {
+      let passwordDigest = await middleware.hashPassword(req.body.newPassword)
+
+      await user.update({ passwordDigest })
+      return res.send({ status: 'Success', msg: 'Password Updated' })
+    }
+    res.status(401).send({ status: 'Error', msg: 'Invalid Credentials' })
+  } catch (error) {
+    throw error
   }
+}
+
+const checkSession = async (req, res) => {
+  const { payload } = res.locals
+
+  res.send(payload)
+}
+
+const deleteUser = async (req, res) => {
+  try {
+    const deleteUser = await User.destroy({ where: { id: req.params.id } })
+    res.send(deleteUser)
+  } catch (error) {
+    res.status(401).send({ status: 'Error', msg: 'user id does not exist' })
+  }
+}
+
+module.exports = {
+  login,
+  register,
+  updatePassword,
+  checkSession,
+  deleteUser
 }
