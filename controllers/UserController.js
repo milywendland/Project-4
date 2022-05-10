@@ -1,5 +1,6 @@
 const jwt = require('jsonwebtoken')
 const bcrypt = require('bcrypt')
+const mongoose = require('mongoose')
 const { User } = mongoose.model('User')
 const res = require('express/lib/response')
 
@@ -18,7 +19,7 @@ exports.register = function (req, res) {
   })
 }
 
-exports.sign_in = function (req, res) {
+exports.signin = function (req, res) {
   User.findOne(
     {
       email: req.body.email

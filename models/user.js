@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-const bcrypt = require('bcyrpt')
+const bcrypt = require('bcrypt')
 const Schema = mongoose.Schema
 
 const User = new Schema(
@@ -12,7 +12,7 @@ const User = new Schema(
   { timestamps: true }
 )
 
-UserSchema.methods.comparePassword = function (password) {
+User.methods.comparePassword = function (password) {
   return bcrypt.compareSync(password, this.hash_password)
 }
 
