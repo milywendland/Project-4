@@ -1,11 +1,12 @@
 const mongoose = require('mongoose')
-const bcrypt = require('bcrypt')
 const Schema = mongoose.Schema
+const bcrypt = require('bcrypt')
 
 const User = new Schema(
   {
     username: { type: String, required: true },
-    hash_password: { type: String, required: true },
+    password: { type: String, required: true },
+    hash_password: { type: String },
     created: { type: Date, default: Date.now },
     pets: [{ type: Schema.Types.ObjectId, ref: 'pets' }]
   },
