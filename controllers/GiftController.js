@@ -23,4 +23,4 @@ const getAllGifts = async (req, res) => {
   }
 }
 
-module.exports = [getGiftById, getAllGifts]
+module.exports = { getGiftById, getAllGifts }
