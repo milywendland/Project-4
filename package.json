@@ -1,8 +1,8 @@
 {
   "name": "ikimono",
   "version": "0.1.0",
-  "private": true,
   "dependencies": {
+    "bcrypt": "^5.0.1",
     "body-parser": "^1.20.0",
     "cors": "^2.8.5",
     "express": "^4.18.1",
