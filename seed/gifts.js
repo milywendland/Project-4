@@ -304,6 +304,378 @@ const main = async () => {
       type: 'Misc',
       buff: 'Health',
       buffAmount: 3
+    },
+    {
+      name: 'Grimoire',
+      type: 'Arcane',
+      buff: 'Knowledge',
+      buffAmount: 4
+    },
+    {
+      name: 'Eye of Newt',
+      type: 'Arcane',
+      buff: 'Knowledge',
+      buffAmount: 1
+    },
+    {
+      name: 'Quartz Crystal',
+      type: 'Misc',
+      buff: 'Mood',
+      buffAmount: 2
+    },
+    {
+      name: 'Cauldron',
+      type: 'Arcane',
+      buff: 'Knowledge',
+      buffAmount: 2
+    },
+    {
+      name: 'Cucumber',
+      type: 'Snack',
+      buff: 'Health',
+      buffAmount: 1
+    },
+    {
+      name: 'Carrot',
+      type: 'Snack',
+      buff: 'Health',
+      buffAmount: 1
+    },
+    {
+      name: 'Graham Crackers',
+      type: 'Snack',
+      buff: 'Health',
+      buffAmount: 1
+    },
+    {
+      name: 'Glass of Milk',
+      type: 'Snack',
+      buff: 'Health',
+      buffAmount: 1
+    },
+    {
+      name: 'Froggie Hat',
+      type: 'Misc',
+      buff: 'Mood',
+      buffAmount: 3
+    },
+    {
+      name: 'Overalls',
+      type: 'Misc',
+      buff: 'Mood',
+      buffAmount: 2
+    },
+    {
+      name: 'Light Up Keychain',
+      type: 'Misc',
+      buff: 'Mood',
+      buffAmount: 1
+    },
+    {
+      name: 'ANTIFA Sticker',
+      type: 'Misc',
+      buff: 'Knowledge',
+      buffAmount: 3
+    },
+    {
+      name: 'Coffee',
+      type: 'Snack',
+      buff: 'Health',
+      buffAmount: 2
+    },
+    {
+      name: 'Paper Airplane',
+      type: 'Toy',
+      buff: 'Mood',
+      buffAmount: 2
+    },
+    {
+      name: 'Bubblegum',
+      type: 'Snack',
+      buff: 'Mood',
+      buffAmount: 1
+    },
+    {
+      name: 'Bandaid',
+      type: 'Misc',
+      buff: 'Health',
+      buffAmount: 2
+    },
+    {
+      name: 'Teddy Bear',
+      type: 'Toy',
+      buff: 'Mood',
+      buffAmount: 3
+    },
+    {
+      name: 'Tangerine',
+      type: 'Snack',
+      buff: 'Health',
+      buffAmount: 2
+    },
+    {
+      name: 'Notepad',
+      type: 'Misc',
+      buff: 'Knowledge',
+      buffAmount: 1
+    },
+    {
+      name: 'Pillow',
+      type: 'Misc',
+      buff: 'Mood',
+      buffAmount: 2
+    },
+    {
+      name: 'Pencil',
+      type: 'Misc',
+      buff: 'Knowledge',
+      buffAmount: 2
+    },
+    {
+      name: 'Bath Robe',
+      type: 'Misc',
+      buff: 'Mood',
+      buffAmount: 1
+    },
+    {
+      name: 'Helmet',
+      type: 'Misc',
+      buff: 'Health',
+      buffAmount: 5
+    },
+    {
+      name: 'Soft Blankey',
+      type: 'Misc',
+      buff: 'Mood',
+      buffAmount: 3
+    },
+    {
+      name: 'Bath Bomb',
+      type: 'Misc',
+      buff: 'Mood',
+      buffAmount: 4
+    },
+    {
+      name: 'Swiffer Wet Jet',
+      type: 'Appliance',
+      buff: 'Mood',
+      buffAmount: 1
+    },
+    {
+      name: 'Cat Food',
+      type: 'Snack',
+      buff: 'Health',
+      buffAmount: 1
+    },
+    {
+      name: 'Water Fountain',
+      type: 'Appliance',
+      buff: 'Health',
+      buffAmount: 3
+    },
+    {
+      name: 'Zen Garden',
+      type: 'Toy',
+      buff: 'Mood',
+      buffAmount: 2
+    },
+    {
+      name: 'Fortune Cooki',
+      type: 'Treasure',
+      buff: 'Health',
+      buffAmount: 3
+    },
+    {
+      name: 'Replica Human Skull',
+      type: 'Misc',
+      buff: 'Knowledge',
+      buffAmount: 3
+    },
+    {
+      name: 'Green Apple',
+      type: 'Snack',
+      buff: 'Health',
+      buffAmount: 2
+    },
+    {
+      name: 'Chocolate Milk',
+      type: 'Snack',
+      buff: 'Health',
+      buffAmount: 1
+    },
+    {
+      name: "S'mores",
+      type: 'Snack',
+      buff: 'Health',
+      buffAmount: 1
+    },
+    {
+      name: 'Turkey Sandwich',
+      type: 'Snack',
+      buff: 'Health',
+      buffAmount: 2
+    },
+    {
+      name: 'Spinach Dip',
+      type: 'Snack',
+      buff: 'Health',
+      buffAmount: 1
+    },
+    {
+      name: 'Elote',
+      type: 'Snack',
+      buff: 'Health',
+      buffAmount: 4
+    },
+    {
+      name: 'Falafel',
+      type: 'Snack',
+      buff: 'Health',
+      buffAmount: 2
+    },
+    {
+      name: 'Youtube Premium Subscription',
+      type: 'Treasure',
+      buff: 'Mood',
+      buffAmount: 5
+    },
+    {
+      name: 'Opal Ring',
+      type: 'Arcane',
+      buff: 'Mood',
+      buffAmount: 3
+    },
+    {
+      name: 'Eye Mask',
+      type: 'Misc',
+      buff: 'Mood',
+      buffAmount: 2
+    },
+    {
+      name: 'Gundam Kit',
+      type: 'Toy',
+      buff: 'Mood',
+      buffAmount: 3
+    },
+    {
+      name: 'Rapier',
+      type: 'Treasure',
+      buff: 'Knowledge',
+      buffAmount: 2
+    },
+    {
+      name: 'Skateboard',
+      type: 'Toy',
+      buff: 'Mood',
+      buffAmount: 2
+    },
+    {
+      name: 'Freddy Fazbear Figure',
+      type: 'Toy',
+      buff: 'Mood',
+      buffAmount: 2
+    },
+    {
+      name: 'Uzumaki by Junji Ito',
+      type: 'Book',
+      buff: 'Knowledge',
+      buffAmount: 2
+    },
+    {
+      name: 'A World Map',
+      type: 'Treasure',
+      buff: 'Knowledge',
+      buffAmount: 2
+    },
+    {
+      name: 'Dungeon Master Guide',
+      type: 'Book',
+      buff: 'Mood',
+      buffAmount: 2
+    },
+    {
+      name: 'Squishmallow',
+      type: 'Treasure',
+      buff: 'Mood',
+      buffAmount: 4
+    },
+    {
+      name: 'Boogie Board',
+      type: 'Toy',
+      buff: 'Mood',
+      buffAmount: 2
+    },
+    {
+      name: 'Rocking Chair',
+      type: 'Misc',
+      buff: 'Mood',
+      buffAmount: 3
+    },
+    {
+      name: 'Bowling Ball',
+      type: 'Toy',
+      buff: 'Mood',
+      buffAmount: 1
+    },
+    {
+      name: 'Chicken Nuggets',
+      type: 'Snack',
+      buff: 'Health',
+      buffAmount: 2
+    },
+    {
+      name: 'Veggie Burger',
+      type: 'Snack',
+      buff: 'Health',
+      buffAmount: 3
+    },
+    {
+      name: 'Grilled Cheese Sammich',
+      type: 'Snack',
+      buff: 'Health',
+      buffAmount: 2
+    },
+    {
+      name: 'A Wheel of Cheese',
+      type: 'Treasure',
+      buff: 'Health',
+      buffAmount: 5
+    },
+    {
+      name: 'Pringles',
+      type: 'Snack',
+      buff: 'Health',
+      buffAmount: 1
+    },
+    {
+      name: 'Gameboy Color',
+      type: 'Treasure',
+      buff: 'Mood',
+      buffAmount: 3
+    },
+    {
+      name: 'Victorian Hand Mirror',
+      type: 'Treasure',
+      buff: 'Knowledge',
+      buffAmount: 2
+    },
+    {
+      name: 'Operation Board Game',
+      type: 'Toy',
+      buff: 'Mood',
+      buffAmount: 2
+    },
+    {
+      name: 'Oregon Trail Game',
+      type: 'Toy',
+      buff: 'Mood',
+      buffAmount: 1
+    },
+    {
+      name: 'Whey Protein Shake',
+      type: 'Snack',
+      buff: 'Health',
+      buffAmount: 2
     }
   ]
 
