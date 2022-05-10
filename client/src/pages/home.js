@@ -28,7 +28,7 @@ const Home = () => {
       </div>
       <div clasName="register-b">
         <h3>Sign Up Here:</h3>
-        <button onClick={() => navigate('/signup')}>SIGN UP</button>
+        <button onClick={() => navigate('/register')}>SIGN UP</button>
       </div>
     </div>
   )

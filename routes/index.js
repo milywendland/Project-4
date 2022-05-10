@@ -17,7 +17,7 @@ router.put(
   middleware.verifyToken,
   authController.updatePassword
 )
-router.get('/gameplay/gifts', giftController.getAllGifts)
+router.get('/gifts', giftController.getAllGifts)
 
 router.delete('/:id', authController.deleteUser)
 

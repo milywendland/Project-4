@@ -23,6 +23,7 @@ function App() {
             <Route path="/register" element={<SignUp />} />
             <Route path="/choosepet" element={<ChoosePet />} />
             <Route path="/profile" element={<Profile />} />
+            <Route path="/gifts" />
           </Routes>
         </main>
       </div>
