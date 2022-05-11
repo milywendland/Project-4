@@ -149,6 +149,22 @@ button:hover{
   margin-bottom: 30px;
 }
 
+.name-change h2{
+  margin-bottom: 30px;
+}
+
+.name-form {
+  margin: auto;
+  height: 100px;
+  width: 250px;
+  border: 1px solid rgb(70, 169, 255);
+}
+
+.name-form input{
+  margin-top:20px;
+  margin-left: 5px;
+}
+
 .pet-wrapper{
   display: grid;
   grid-template-columns: 1fr 1fr;

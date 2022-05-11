@@ -8,7 +8,12 @@ const middleware = require('../middleware')
 
 router.get('/', (req, res) => res.send('this is root'))
 router.get('/choosepet', petController.getAllPets)
+router.get('/choosepet/:id', petController.getPetById)
 router.get('/gameplay', petController.getPetById)
+router.get('/gifts', giftController.getAllGifts)
+router.put('/edit/:id', petController.editPet)
+
+// - auth - //
 router.post('/register', authController.register)
 router.post('/signin', authController.login)
 router.put(
@@ -17,8 +22,6 @@ router.put(
   middleware.verifyToken,
   authController.updatePassword
 )
-router.get('/gifts', giftController.getAllGifts)
-
 router.delete('/:id', authController.deleteUser)
 
 module.exports = router

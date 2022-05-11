@@ -18,7 +18,7 @@ const ChoosePet = () => {
         <div
           className="tanuki-create"
           onClick={() => {
-            navigate(`/gameplay/${tanuki_id}`)
+            navigate(`/edit/${tanuki_id}`)
           }}
         >
           <img src={MILTTANUKI} alt="tanuki" />
@@ -26,7 +26,7 @@ const ChoosePet = () => {
         <div
           className="kitsune-create"
           onClick={() => {
-            navigate(`/gameplay/${kitsune_id}`)
+            navigate(`/choosepet/edit/${kitsune_id}`)
           }}
         >
           <img src={MILKITSUNE} alt="kitsune" />
@@ -34,7 +34,7 @@ const ChoosePet = () => {
         <div
           className="kappa-create"
           onClick={() => {
-            navigate(`/gameplay/${kappa_id}`)
+            navigate(`/choosepet/edit/${kappa_id}`)
           }}
         >
           <img src={MILKAPPA} alt="kappa" />
@@ -42,7 +42,7 @@ const ChoosePet = () => {
         <div
           className="canti-create"
           onClick={() => {
-            navigate(`/gameplay/${canti_id}`)
+            navigate(`/choosepet/edit/${canti_id}`)
           }}
         >
           <img src={MILSCANTI} alt="robot" />
