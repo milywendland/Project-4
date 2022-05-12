@@ -11,9 +11,7 @@ const Gameplay = () => {
 
   useEffect(() => {
     const getPetById = async () => {
-      const response = await axios.get(
-        `http:localhost/api/choosepet/${pet.data.pet._id}`
-      )
+      const response = await axios.get(`http:localhost/api/choosepet/${id}`)
       console.log(response.data)
       setPet(response.data.pet)
     }

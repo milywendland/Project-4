@@ -41,6 +41,11 @@ nav a:hover{
   color:rgb(70, 169, 255);
 }
 
+.haydie img{
+  height: 200px;
+  
+}
+
 .signin{
   height: 170px;
   width: 200px;

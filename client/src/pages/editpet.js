@@ -5,32 +5,21 @@ import axios from 'axios'
 const EditPet = () => {
   const { id } = useParams()
   const [name, setName] = useState('')
-  const [pet, setPet] = useState('')
 
   let navigate = useNavigate()
-
-  useEffect(() => {
-    const getPetById = async () => {
-      const response = await axios.get(
-        `http:localhost:3001/api/choosepet/edit/${pet.data.pet._id}`
-      )
-      console.log(response)
-    }
-    getPetById()
-  }, [id])
 
   const handleNameChange = (e) => {
     e.preventDefault()
     setName(e.target.value)
+    console.log(name)
   }
 
   const handleSubmit = (e) => {
     e.preventDefault()
     if (name !== '') {
       axios
-        .put(`http://localhost:3001/api/choosepet/edit/${pet.data.pet._id}`)
+        .put(`http://localhost:3001/api/choosepet/edit/${id}`)
         .then((pet) => {
-          console.log(pet)
           navigate(`/gameplay/${pet.data.pet._id}`)
         })
         .catch((err) => console.log(err))
@@ -43,12 +32,7 @@ const EditPet = () => {
         <form onSubmit={handleSubmit}>
           <label>
             Pet Name:
-            <input
-              onChange={handleNameChange}
-              type="text"
-              placeholder={pet.name}
-              name="name"
-            />
+            <input onChange={handleNameChange} type="text" name="name" />
           </label>
           <input type="submit" value="SUBMIT" />
         </form>
