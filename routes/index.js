@@ -7,7 +7,7 @@ const giftController = require('../controllers/GiftController')
 const middleware = require('../middleware')
 
 router.get('/', (req, res) => res.send('this is root'))
-router.get('/choosepet/:id', petController.getPetById) //*DO I NEED THIS??*//
+router.get('/choosepet', petController.getAllPets)
 router.get('/gameplay/:id', petController.getPetById)
 router.get('/gifts', giftController.getAllGifts)
 router.put('/choosepet/edit/:id', petController.editPet)

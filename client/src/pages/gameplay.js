@@ -1,13 +1,21 @@
 import WALKMANFIN from '../images/WALKMANFIN.png'
-import room from '../images/room.png'
-import { useNavigate } from 'react-router-dom'
-import MILKAPPA from '../images/MILKAPPA.png'
-import MILKITSUNE from '../images/MILKITSUNE.png'
-import MILTTANUKI from '../images/MILTTANUKI.png'
-import MILSCANTI from '../images/MILSCANTI.png'
+import { useNavigate, useParams } from 'react-router-dom'
+import { useState, useEffect } from 'react'
+import axios from 'axios'
 
 const Gameplay = () => {
   const navigate = useNavigate()
+  const { id } = useParams()
+
+  const [pet, setPet] = useState('')
+
+  useEffect(() => {
+    const getPetById = async () => {
+      const response = await axios.get(`http:localhost/api/gameplay/${id}`)
+      setPet(response.data.pet)
+    }
+    getPetById()
+  }, [id])
 
   // let petDead = false
   // let hunger = 0
@@ -61,7 +69,7 @@ const Gameplay = () => {
         <img src={WALKMANFIN} alt="console" />
       </div>
       <div className="console-pet">
-        <img src={MILSCANTI} alt="canti" />
+        <img src={pet.img} alt="canti" />
       </div>
       <div className="left-button"></div>
       <div className="right-button"></div>
