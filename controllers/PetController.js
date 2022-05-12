@@ -50,9 +50,20 @@ const deletePet = async (req, res) => {
   }
 }
 
+const createPet = async (req, res) => {
+  try {
+    const pet = await new Pet(req.body)
+    await pet.save()
+    return res.status(201).json({ pet })
+  } catch (error) {
+    return res.status(500).json({ error: error.message })
+  }
+}
+
 module.exports = {
   getAllPets,
   getPetById,
   editPet,
-  deletePet
+  deletePet,
+  createPet
 }
