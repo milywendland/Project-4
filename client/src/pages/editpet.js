@@ -12,9 +12,9 @@ const EditPet = () => {
   useEffect(() => {
     const getPetById = async () => {
       const response = await axios.get(
-        `http:localhost:3001/api/choosepet/${id}`
+        `http:localhost:3001/api/choosepet/edit/${pet.data.pet._id}`
       )
-      setPet(response.data.pet)
+      console.log(response)
     }
     getPetById()
   }, [id])
@@ -28,9 +28,12 @@ const EditPet = () => {
     e.preventDefault()
     if (name !== '') {
       axios
-        .put(`http://localhost:3001/api/choosepet/edit/${id}`)
+        .put(`http://localhost:3001/api/choosepet/edit/${pet.data.pet._id}`)
+        .then((pet) => {
+          console.log(pet)
+          navigate(`/gameplay/${pet.data.pet._id}`)
+        })
         .catch((err) => console.log(err))
-      navigate(`/gameplay/${id}`)
     }
   }
 
