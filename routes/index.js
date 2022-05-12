@@ -8,10 +8,10 @@ const middleware = require('../middleware')
 
 router.get('/', (req, res) => res.send('this is root'))
 router.get('/choosepet', petController.getAllPets)
-router.get('/choosepet/:id', petController.getPetById)
+router.get('/choosepet/:id', petController.getPetById) //*DO I NEED THIS??*//
 router.get('/gameplay', petController.getPetById)
 router.get('/gifts', giftController.getAllGifts)
-router.put('/edit/:id', petController.editPet)
+router.put('/choosepet/edit/:id', petController.editPet)
 
 // - auth - //
 router.post('/register', authController.register)
