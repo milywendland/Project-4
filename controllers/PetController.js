@@ -28,9 +28,6 @@ const editPet = async (req, res) => {
   Pet.findByIdAndUpdate(id, req.body, { new: true }, (error, pet) => {
     if (error) {
       res.status(500).send(error)
-    }
-    if (!game) {
-      res.status(500).send('oops no pet found!')
     } else {
       return res.status(200).json({ pet })
     }

@@ -3,10 +3,12 @@ import MILKITSUNE from '../images/MILKITSUNE.png'
 import MILSCANTI from '../images/MILSCANTI.png'
 import MILTTANUKI from '../images/MILTTANUKI.png'
 import { useNavigate } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import axios from 'axios'
 
 const ChoosePet = () => {
   const navigate = useNavigate()
+  const { id } = useParams()
 
   const kitsuneCreator = async (e) => {
     const packagedPayLoad = {
@@ -19,8 +21,11 @@ const ChoosePet = () => {
     e.preventDefault()
     axios
       .post('http://localhost:3001/api/choosepet', packagedPayLoad)
+      .then((pet) => {
+        console.log(pet)
+        navigate(`/choosepet/edit/${pet.data.pet._id}`)
+      })
       .catch((err) => console.log(err))
-    navigate('/editpet/:id')
   }
 
   const tanukiCreator = async (e) => {
@@ -34,8 +39,11 @@ const ChoosePet = () => {
     e.preventDefault()
     axios
       .post('http://localhost:3001/api/choosepet', packagedPayLoad)
+      .then((pet) => {
+        console.log(pet)
+        navigate(`/choosepet/edit/${pet.data.pet._id}`)
+      })
       .catch((err) => console.log(err))
-    navigate('/editpet/:id')
   }
 
   const kappaCreator = async (e) => {
@@ -49,8 +57,11 @@ const ChoosePet = () => {
     e.preventDefault()
     axios
       .post('http://localhost:3001/api/choosepet', packagedPayLoad)
+      .then((pet) => {
+        console.log(pet)
+        navigate(`/choosepet/edit/${pet.data.pet._id}`)
+      })
       .catch((err) => console.log(err))
-    navigate('/editpet/:id')
   }
 
   const cantiCreator = async (e) => {
@@ -64,8 +75,11 @@ const ChoosePet = () => {
     e.preventDefault()
     axios
       .post('http://localhost:3001/api/choosepet', packagedPayLoad)
+      .then((pet) => {
+        console.log(pet)
+        navigate(`/choosepet/edit/${pet.data.pet._id}`)
+      })
       .catch((err) => console.log(err))
-    navigate('/editpet/:id')
   }
 
   return (

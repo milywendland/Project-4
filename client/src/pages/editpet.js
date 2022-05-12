@@ -1,13 +1,23 @@
 import { useNavigate, useParams } from 'react-router-dom'
-import {useState } from 'react'
-import axios from axios
+import { useState, useEffect } from 'react'
+import axios from 'axios'
 
 const EditPet = () => {
-
-  const {id} = useParams()
+  const { id } = useParams()
   const [name, setName] = useState('')
+  const [pet, setPet] = useState('')
 
   let navigate = useNavigate()
+
+  useEffect(() => {
+    const getPetById = async () => {
+      const response = await axios.get(
+        `http:localhost:3001/api/choosepet/${id}`
+      )
+      setPet(response.data.pet)
+    }
+    getPetById()
+  }, [id])
 
   const handleNameChange = (e) => {
     e.preventDefault()
@@ -17,8 +27,9 @@ const EditPet = () => {
   const handleSubmit = (e) => {
     e.preventDefault()
     if (name !== '') {
-      axios.put(`http://localhost:3001/api/editpet/${id}`)
-      .catch((err)=> console.log(err))
+      axios
+        .put(`http://localhost:3001/api/choosepet/edit/${id}`)
+        .catch((err) => console.log(err))
       navigate(`/gameplay/${id}`)
     }
   }
@@ -29,9 +40,14 @@ const EditPet = () => {
         <form onSubmit={handleSubmit}>
           <label>
             Pet Name:
-            <input onChange={handleNameChange} type="text" placeholder={pet.name} name="name" />
+            <input
+              onChange={handleNameChange}
+              type="text"
+              placeholder={pet.name}
+              name="name"
+            />
           </label>
-          <input type='submit' value="SUBMIT"/>
+          <input type="submit" value="SUBMIT" />
         </form>
       </div>
     </div>
