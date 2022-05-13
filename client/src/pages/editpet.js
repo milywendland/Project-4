@@ -18,7 +18,7 @@ const EditPet = () => {
     e.preventDefault()
     if (name !== '') {
       axios
-        .put(`http://localhost:3001/api/choosepet/edit/${id}`)
+        .put(`http://localhost:3001/api/choosepet/edit/${id}`, { name: name })
         .then((pet) => {
           navigate(`/gameplay/${pet.data.pet._id}`)
         })
