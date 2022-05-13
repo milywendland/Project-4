@@ -98,8 +98,8 @@ button:hover{
 .console-pet img{
   height: 300px;
   position:absolute;
-  left: 450px;
-  top: 190px;
+  left: 490px;
+  top: 220px;
   animation: float 3s ease-out infinite;
 }
 
@@ -123,8 +123,8 @@ button:hover{
   width: 25px;
   background-color: aquamarine;
   position: absolute;
-  right: 650px;
-  top: 375px;
+  right: 618px;
+  top: 380px;
 }
 
 .right-button{
@@ -132,8 +132,8 @@ button:hover{
   width: 25px;
   background-color:rgb(209, 255, 23);
   position: absolute;
-  right: 555px;
-  top: 375px;
+  right: 525px;
+  top: 380px;
 }
 
 .surprise-button{
@@ -141,8 +141,8 @@ button:hover{
   width: 30px;
   background-color: blueviolet;
   position: absolute;
-  left: 580px;
-  top: 125px;
+  left: 615px;
+  top: 135px;
 }
 
 .gameplay button{

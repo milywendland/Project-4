@@ -1,4 +1,4 @@
-import WALKMANFIN from '../images/WALKMANFIN.png'
+import MILCONSOLECOM from '../images/MILCONSOLECOM.png'
 import { useNavigate, useParams } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
@@ -69,7 +69,7 @@ const Gameplay = () => {
   return (
     <div className="gameplay">
       <div className="console">
-        <img src={WALKMANFIN} alt="console" />
+        <img src={MILCONSOLECOM} alt="console" />
       </div>
       <div className="console-pet">
         <img src={pet.img} alt="pet" />
@@ -77,6 +77,9 @@ const Gameplay = () => {
       <div className="left-button"></div>
       <div className="right-button"></div>
       <div className="surprise-button"></div>
+      <h3>
+        {pet.name} the {pet.type}
+      </h3>
       <button onClick={() => navigate('/choosepet')}>Choose A Pet</button>
     </div>
   )
