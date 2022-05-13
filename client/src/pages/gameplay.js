@@ -1,4 +1,5 @@
 import WALKMANFIN from '../images/WALKMANFIN.png'
+import MILYBACKROOM from '../images/MILYBACKROOM.png'
 import { useNavigate, useParams } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
@@ -68,6 +69,7 @@ const Gameplay = () => {
     <div className="gameplay">
       <div className="console">
         <img src={WALKMANFIN} alt="console" />
+        <img src={MILYBACKROOM} alt="bedroom" />
       </div>
       <div className="console-pet">
         <img src={pet.img} alt="canti" />
