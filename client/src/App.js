@@ -9,6 +9,7 @@ import SignUp from './pages/signup'
 import ChoosePet from './pages/choosepet'
 import Profile from './pages/profile'
 import EditPet from './pages/editpet'
+import SignIn from './pages/signin'
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
             <Route path="/profile" element={<Profile />} />
             <Route path="/gifts" element={<Gameplay />} />
             <Route path="/choosepet/edit/:id" element={<EditPet />} />
+            <Route path="/signin" element={<SignIn />} />
           </Routes>
         </main>
       </div>

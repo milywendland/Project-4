@@ -1,20 +1,10 @@
 import IkimonoLogo from '../images/IkimonoLogo.PNG'
 import { useNavigate } from 'react-router-dom'
+import { useState } from 'react'
 import axios from 'axios'
 
 const Home = () => {
   let navigate = useNavigate()
-
-  const handleSubmit = async (data) => {
-    try {
-      const res = await axios.post('http://localhost:3001/api/login', data)
-      localStorage.setItem('token', res.data.token)
-      return res.data.user
-      navigate('/profile/:id')
-    } catch (error) {
-      throw error
-    }
-  }
 
   return (
     <div className="home">
@@ -22,25 +12,8 @@ const Home = () => {
       id love to have a title screen pop up here with the song taylor made and art by hayden */}
 
       <img src={IkimonoLogo} alt="ikomono logo" />
-      <div className="signin">
-        <form>
-          <label>
-            {' '}
-            Username:
-            <input type="text" placeholder="username" />
-          </label>
-          <label>
-            {' '}
-            Password:
-            <input type="text" placeholder="password" />
-          </label>
-          <input type="submit" value="SUBMIT" onSubmit={handleSubmit} />
-        </form>
-      </div>
-      <div className="register-b">
-        <h3>Sign Up Here:</h3>
-        <button onClick={() => navigate('/register')}>SIGN UP</button>
-      </div>
+      <button onClick={() => navigate('/signin')}>SIGN IN</button>
+      <button onClick={() => navigate('/register')}>REGISTER</button>
     </div>
   )
 }

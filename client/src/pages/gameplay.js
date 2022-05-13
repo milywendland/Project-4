@@ -3,7 +3,7 @@ import { useNavigate, useParams } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 
-const Gameplay = () => {
+const Gameplay = ({ user, authenticated }) => {
   const navigate = useNavigate()
   const { id } = useParams()
 
@@ -66,7 +66,7 @@ const Gameplay = () => {
   //   alert(message, 'Your pet has died')
   // }
 
-  return (
+  return user && authenticated ? (
     <div className="gameplay">
       <div className="console">
         <img src={MILCONSOLECOM} alt="console" />
@@ -81,6 +81,11 @@ const Gameplay = () => {
         {pet.name} the {pet.type}
       </h3>
       <button onClick={() => navigate('/choosepet')}>Choose A Pet</button>
+    </div>
+  ) : (
+    <div>
+      <h3>Uh oh! You need to be signed in to play Ikimono.</h3>
+      <button onClick={() => navigate('/')}>SIGN IN</button>
     </div>
   )
 }

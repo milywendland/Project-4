@@ -11,7 +11,6 @@ const EditPet = () => {
   const handleNameChange = (e) => {
     e.preventDefault()
     setName(e.target.value)
-    console.log(name)
   }
 
   const handleSubmit = (e) => {
