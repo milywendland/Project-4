@@ -10,7 +10,7 @@ const Home = () => {
       const res = await axios.post('http://localhost:3001/api/login', data)
       localStorage.setItem('token', res.data.token)
       return res.data.user
-      navigate('/gameplay/:id')
+      navigate('/profile/:id')
     } catch (error) {
       throw error
     }
@@ -37,7 +37,7 @@ const Home = () => {
           <input type="submit" value="SUBMIT" onSubmit={handleSubmit} />
         </form>
       </div>
-      <div clasName="register-b">
+      <div className="register-b">
         <h3>Sign Up Here:</h3>
         <button onClick={() => navigate('/register')}>SIGN UP</button>
       </div>
