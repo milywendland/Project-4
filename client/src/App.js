@@ -10,8 +10,26 @@ import ChoosePet from './pages/choosepet'
 import Profile from './pages/profile'
 import EditPet from './pages/editpet'
 import SignIn from './pages/signin'
+import { useState, useEffect } from 'react'
+import { CheckSession } from './services/auth'
 
 function App() {
+  const [authenticated, toggleAuthenticated] = useState(false)
+  const [user, setUser] = useState(null)
+
+  const checkToken = async () => {
+    const user = await CheckSession()
+    setUser(user)
+    toggleAuthenticated(true)
+  }
+
+  useEffect(() => {
+    const token = localStorage.getItem('token')
+    if (token) {
+      checkToken()
+    }
+  }, [])
+
   return (
     <div className="App">
       <div>
@@ -24,10 +42,21 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/register" element={<SignUp />} />
             <Route path="/choosepet" element={<ChoosePet />} />
-            <Route path="/profile" element={<Profile />} />
+            <Route
+              path="/profile"
+              element={<Profile user={user} authenticated={authenticated} />}
+            />
             <Route path="/gifts" element={<Gameplay />} />
             <Route path="/choosepet/edit/:id" element={<EditPet />} />
-            <Route path="/signin" element={<SignIn />} />
+            <Route
+              path="/signin"
+              element={
+                <SignIn
+                  setUser={setUser}
+                  toggleAuthenticated={toggleAuthenticated}
+                />
+              }
+            />
           </Routes>
         </main>
       </div>

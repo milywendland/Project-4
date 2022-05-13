@@ -26,7 +26,7 @@ const SignIn = () => {
         password: password
       })
       localStorage.setItem('token', res.data.token)
-      return res.data.user
+      navigate('/profile')
     } catch (error) {
       throw error
     }
@@ -56,9 +56,7 @@ const SignIn = () => {
               onChange={handlePasswordChange}
             />
           </label>
-          <button type="submit" onClick={() => navigate('/profile')}>
-            SUBMIT
-          </button>
+          <button type="submit">SUBMIT</button>
         </form>
       </div>
       <div className="register-b">

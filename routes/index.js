@@ -24,5 +24,6 @@ router.put(
   authController.updatePassword
 )
 router.delete('/:id', authController.deleteUser)
+router.get('/session', authController.checkSession)
 
 module.exports = router
