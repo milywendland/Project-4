@@ -1,5 +1,5 @@
 const res = require('express/lib/response')
-const { Pet } = require('../models/index')
+const { Pet, User } = require('../models/index')
 
 const getAllPets = async (req, res) => {
   try {
@@ -50,6 +50,9 @@ const deletePet = async (req, res) => {
 const createPet = async (req, res) => {
   try {
     const pet = await new Pet(req.body)
+    const user = await User.findById(req.params.userid)
+    user.pets.push(pet)
+    await user.save()
     await pet.save()
     return res.status(201).json({ pet })
   } catch (error) {

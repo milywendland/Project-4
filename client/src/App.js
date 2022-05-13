@@ -41,9 +41,9 @@ function App() {
             <Route path="/gameplay" element={<Gameplay />} />
             <Route path="/about" element={<About />} />
             <Route path="/register" element={<SignUp />} />
-            <Route path="/choosepet" element={<ChoosePet />} />
+            <Route path="/choosepet/:id" element={<ChoosePet />} />
             <Route
-              path="/profile"
+              path="/profile/:id"
               element={<Profile user={user} authenticated={authenticated} />}
             />
             <Route path="/gifts" element={<Gameplay />} />

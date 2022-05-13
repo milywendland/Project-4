@@ -12,7 +12,7 @@ router.get('/choosepet/edit/:id', petController.getPetById)
 router.get('/gameplay/:id', petController.getPetById)
 router.get('/gifts', giftController.getAllGifts)
 router.put('/choosepet/edit/:id', petController.editPet)
-router.post('/choosepet', petController.createPet)
+router.post('/choosepet/:userid', petController.createPet)
 
 // - auth - //
 router.post('/register', authController.register)

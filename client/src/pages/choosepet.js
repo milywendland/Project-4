@@ -20,7 +20,7 @@ const ChoosePet = () => {
     }
     e.preventDefault()
     axios
-      .post('http://localhost:3001/api/choosepet', packagedPayLoad)
+      .post(`http://localhost:3001/api/choosepet/${id}`, packagedPayLoad)
       .then((pet) => {
         console.log(pet)
         navigate(`/choosepet/edit/${pet.data.pet._id}`)

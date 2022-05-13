@@ -6,14 +6,15 @@ const login = async (req, res) => {
     const user = await User.findOne({
       where: { username: req.body.username },
       raw: true
-    })
+    }).populate('pets')
     if (
       user &&
       (await middleware.comparePassword(user.passwordDigest, req.body.password))
     ) {
       let payload = {
         id: user.id,
-        username: user.username
+        username: user.username,
+        pets: user.pets
       }
       let token = middleware.createToken(payload)
       res.send({ user: payload, token })

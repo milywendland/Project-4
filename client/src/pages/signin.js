@@ -1,35 +1,24 @@
 import { useNavigate } from 'react-router-dom'
 import { useState } from 'react'
 import axios from 'axios'
+import { SignInUser } from '../services/auth'
 
-const SignIn = () => {
+const SignIn = ({ setUser, toggleAuthenticated }) => {
   let navigate = useNavigate()
 
-  const [username, setUsername] = useState('')
-  const [password, setPassword] = useState('')
+  const [formValues, setFormValues] = useState({ username: '', password: '' })
 
-  const handleUsernameChange = (e) => {
-    e.preventDefault()
-    setUsername(e.target.value)
-  }
-
-  const handlePasswordChange = (e) => {
-    e.preventDefault()
-    setPassword(e.target.value)
+  const handleChange = (e) => {
+    setFormValues({ ...formValues, [e.target.name]: e.target.value })
   }
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    try {
-      const res = await axios.post('http://localhost:3001/api/signin', {
-        username: username,
-        password: password
-      })
-      localStorage.setItem('token', res.data.token)
-      navigate('/profile')
-    } catch (error) {
-      throw error
-    }
+    const payload = await SignInUser(formValues)
+    setFormValues({ username: '', password: '' })
+    setUser(payload)
+    toggleAuthenticated(true)
+    navigate(`/profile/${payload.id}`)
   }
 
   return (
@@ -43,7 +32,8 @@ const SignIn = () => {
               type="text"
               name="username"
               placeholder="username"
-              onChange={handleUsernameChange}
+              onChange={handleChange}
+              value={formValues.username}
             />
           </label>
           <label>
@@ -53,7 +43,8 @@ const SignIn = () => {
               type="text"
               name="password"
               placeholder="password"
-              onChange={handlePasswordChange}
+              onChange={handleChange}
+              value={formValues.password}
             />
           </label>
           <button type="submit">SUBMIT</button>
