@@ -43,7 +43,7 @@ nav a:hover{
 
 .haydie img{
   height: 200px;
-  
+
 }
 
 .signin{
@@ -98,8 +98,8 @@ button:hover{
 .console-pet img{
   height: 300px;
   position:absolute;
-  left: 440px;
-  top: 175px;
+  left: 450px;
+  top: 190px;
   animation: float 3s ease-out infinite;
 }
 
@@ -116,6 +116,7 @@ button:hover{
   position: relative;
   
 }
+
 
 .left-button{
   height: 35px;

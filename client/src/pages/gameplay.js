@@ -1,5 +1,4 @@
 import WALKMANFIN from '../images/WALKMANFIN.png'
-import MILYBACKROOM from '../images/MILYBACKROOM.png'
 import { useNavigate, useParams } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
@@ -12,7 +11,9 @@ const Gameplay = () => {
 
   useEffect(() => {
     const getPetById = async () => {
-      const response = await axios.get(`http:localhost/api/choosepet/${id}`)
+      const response = await axios.get(
+        `http://localhost:3001/api/gameplay/${id}`
+      )
       console.log(response.data)
       setPet(response.data.pet)
     }
@@ -69,10 +70,9 @@ const Gameplay = () => {
     <div className="gameplay">
       <div className="console">
         <img src={WALKMANFIN} alt="console" />
-        <img src={MILYBACKROOM} alt="bedroom" />
       </div>
       <div className="console-pet">
-        <img src={pet.img} alt="canti" />
+        <img src={pet.img} alt="pet" />
       </div>
       <div className="left-button"></div>
       <div className="right-button"></div>
