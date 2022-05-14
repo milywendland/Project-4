@@ -3,7 +3,6 @@ import './App.css'
 import Header from './components/header'
 import { Routes, Route } from 'react-router-dom'
 import Home from './pages/home'
-import Gameplay from './pages/gameplay'
 import About from './pages/about'
 import SignUp from './pages/signup'
 import ChoosePet from './pages/choosepet'
@@ -37,7 +36,6 @@ function App() {
         <main>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/gameplay/:id" element={<Gameplay />} />
             <Route path="/about" element={<About />} />
             <Route path="/register" element={<SignUp />} />
             <Route path="/choosepet/:id" element={<ChoosePet />} />
@@ -45,7 +43,7 @@ function App() {
               path="/profile/:id"
               element={<Profile user={user} authenticated={authenticated} />}
             />
-            <Route path="/gifts" element={<Gameplay />} />
+            <Route path="/gifts" element={<Profile />} />
             <Route path="/choosepet/edit/:id" element={<EditPet />} />
             <Route
               path="/signin"
