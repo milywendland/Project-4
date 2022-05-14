@@ -69,9 +69,15 @@ const Profile = ({ user, authenticated }) => {
   return user && authenticated ? (
     <div>
       <h2>Hey, {user.username}! </h2>
-      <button onClick={() => navigate(`/choosepet/${id}`)}>Choose A Pet</button>
+      <div className="choose">
+        <button onClick={() => navigate(`/choosepet/${id}`)}>
+          Choose A Pet
+        </button>
+      </div>
+      <div className="delete">
+        <button>Delete Pet</button>
+      </div>
       <div className="pet-feed">{/* this is where feed will live */}</div>
-      <button>Delete Pet :[</button>
       <div className="play-game">
         <div className="console">
           <img src={MILCONSOLECOM} alt="console" />
@@ -82,7 +88,9 @@ const Profile = ({ user, authenticated }) => {
         <div className="left-button"></div>
         <div className="right-button"></div>
         <div className="surprise-button"></div>
-        <h3>PET</h3>
+        <h3>
+          You're taking care of {user.pets[0].name} the {user.pets[0].type}
+        </h3>
       </div>
     </div>
   ) : (

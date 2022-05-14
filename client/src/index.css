@@ -21,7 +21,7 @@ nav {
   padding-bottom: 20px;
   font-family: 'Play', sans-serif;
   font-weight: 700;
-  font-size: 18px;
+  font-size: 24px;
 }
 
 a {
@@ -35,6 +35,12 @@ nav a:hover{
 
 .home img {
   height:250px;
+}
+
+.home-buttons button{
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .about a{
@@ -95,11 +101,27 @@ button:hover{
   margin-bottom: 10px;
 }
 
+.choose button{
+  height: 40px;
+  width: 80px;
+ position: absolute;
+ top: 100px;
+ right: 210px;
+}
+
+.delete button{
+  height: 40px;
+  width: 80px;
+  position: absolute;
+  top: 170px;
+  right: 210px;
+}
+
 .console-pet img{
-  height: 300px;
+  height: 280px;
   position:absolute;
-  left: 490px;
-  top: 220px;
+  left: 510px;
+  top: 260px;
   animation: float 3s ease-out infinite;
 }
 
@@ -123,8 +145,8 @@ button:hover{
   width: 25px;
   background-color: aquamarine;
   position: absolute;
-  right: 618px;
-  top: 380px;
+  right: 665px;
+  top: 455px;
 }
 
 .right-button{
@@ -132,8 +154,8 @@ button:hover{
   width: 25px;
   background-color:rgb(209, 255, 23);
   position: absolute;
-  right: 525px;
-  top: 380px;
+  right: 570px;
+  top: 455px;
 }
 
 .surprise-button{
@@ -141,8 +163,8 @@ button:hover{
   width: 30px;
   background-color: blueviolet;
   position: absolute;
-  left: 615px;
-  top: 135px;
+  left: 660px;
+  top: 205px;
 }
 
 .gameplay button{

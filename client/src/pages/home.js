@@ -12,8 +12,10 @@ const Home = () => {
       id love to have a title screen pop up here with the song taylor made and art by hayden */}
 
       <img src={IkimonoLogo} alt="ikomono logo" />
-      <button onClick={() => navigate('/signin')}>SIGN IN</button>
-      <button onClick={() => navigate('/register')}>REGISTER</button>
+      <div className="home-buttons">
+        <button onClick={() => navigate('/signin')}>SIGN IN</button>
+        <button onClick={() => navigate('/register')}>REGISTER</button>
+      </div>
     </div>
   )
 }
