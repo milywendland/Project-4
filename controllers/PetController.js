@@ -60,10 +60,24 @@ const createPet = async (req, res) => {
   }
 }
 
+const getUser = async (req, res) => {
+  try {
+    const { id } = req.params
+    const user = await User.findById(id)
+    if (user) {
+      return res.status(200).json({ user })
+    }
+    return res.status(404).send('User does not exist')
+  } catch (error) {
+    return res.status(500).send(error.message)
+  }
+}
+
 module.exports = {
   getAllPets,
   getPetById,
   editPet,
   deletePet,
-  createPet
+  createPet,
+  getUser
 }

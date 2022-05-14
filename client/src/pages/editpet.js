@@ -18,8 +18,8 @@ const EditPet = () => {
     if (name !== '') {
       axios
         .put(`http://localhost:3001/api/choosepet/edit/${id}`, { name: name })
-        .then((pet) => {
-          navigate(`/gameplay/${pet.data.pet._id}`)
+        .then((user) => {
+          navigate(`/gameplay/${user.pets._id}}`)
         })
         .catch((err) => console.log(err))
     }

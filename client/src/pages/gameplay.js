@@ -10,14 +10,14 @@ const Gameplay = ({ user, authenticated }) => {
   const [pet, setPet] = useState('')
 
   useEffect(() => {
-    const getPetById = async () => {
+    const getPetByUserId = async () => {
       const response = await axios.get(
         `http://localhost:3001/api/gameplay/${id}`
       )
       console.log(response.data)
-      setPet(response.data.pet)
+      setPet(response.data.user.pets)
     }
-    getPetById()
+    getPetByUserId()
   }, [id])
 
   // let petDead = false
@@ -66,26 +66,18 @@ const Gameplay = ({ user, authenticated }) => {
   //   alert(message, 'Your pet has died')
   // }
 
-  return user && authenticated ? (
+  return (
     <div className="gameplay">
       <div className="console">
         <img src={MILCONSOLECOM} alt="console" />
       </div>
       <div className="console-pet">
-        <img src={pet.img} alt="pet" />
+        <img src={user.pets.img} alt="pet" />
       </div>
       <div className="left-button"></div>
       <div className="right-button"></div>
       <div className="surprise-button"></div>
-      <h3>
-        {pet.name} the {pet.type}
-      </h3>
-      <button onClick={() => navigate('/choosepet')}>Choose A Pet</button>
-    </div>
-  ) : (
-    <div>
-      <h3>Uh oh! You need to be signed in to play Ikimono.</h3>
-      <button onClick={() => navigate('/')}>SIGN IN</button>
+      <h3>PET</h3>
     </div>
   )
 }
