@@ -203,12 +203,19 @@ button:hover{
 }
 
 .surprise-button{
-  height: 20px;
-  width: 30px;
-  background-color: blueviolet;
+  height: 22px;
+  width: 32px;
+  background-color: transparent;
   position: absolute;
   left: 660px;
-  top: 205px;
+  top: 204px;
+  border-color: black;
+  border-radius: 0;;
+}
+
+.surprise-button:hover{
+  background-color: transparent;
+  cursor: pointer;
 }
 
 .gameplay button{
@@ -369,7 +376,7 @@ and (device-height: 896px)
     background-color: blueviolet;
     position: absolute;
     left: 155px;
-    top: 175px;
+    top: 17px;
   }
 
   .petstatus{

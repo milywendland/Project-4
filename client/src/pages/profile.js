@@ -1,10 +1,14 @@
 import { useNavigate, useParams } from 'react-router-dom'
+import { useEffect, useState } from 'react'
+import axios from 'axios'
 
 import MILCONSOLECOM from '../images/MILCONSOLECOM.png'
 
 const Profile = ({ user, authenticated }) => {
   const navigate = useNavigate()
   const { id } = useParams()
+  const [gift, setGift] = useState('')
+  const [surprise, setSurprise] = useState('')
 
   let dead = false
   let hunger = 0
@@ -55,24 +59,53 @@ const Profile = ({ user, authenticated }) => {
   }
 
   const feedPet = () => {
-    if (hunger > 1) {
+    if (hunger >= 1) {
       hunger--
     }
   }
 
   const playWithPet = () => {
-    if (boredom > 1) {
+    if (boredom >= 1) {
       boredom--
     }
   }
 
   const goToSleep = () => {
-    if (sleepy > 1) {
+    if (sleepy >= 1) {
       sleepy--
     }
   }
 
   const killPet = () => {}
+
+  const startGame = () => {
+    startIntervals()
+    checkPetStatus()
+  }
+
+  useEffect(() => {
+    const getGift = async () => {
+      const response = await axios.get('http://localhost:3001/api/gifts')
+      setGift(response.data.gift)
+    }
+    getGift()
+  }, [])
+
+  const giftAdd = () => {
+    if (gift.buff === 'Knowledge') {
+      boredom--
+    } else if (gift.buff === 'Snack') {
+      hunger--
+    } else if (gift.buff == 'Mood') {
+      boredom--
+    }
+  }
+
+  const giftButton = () => {
+    let surpriseGift = gift[Math.floor(Math.random() * gift.length)]
+    console.log(surpriseGift)
+    // giftAdd(surpriseGift)
+  }
 
   return user && authenticated ? (
     <div className="prof">
@@ -94,7 +127,6 @@ const Profile = ({ user, authenticated }) => {
         <h4>Boredom: {boredom}</h4>
         <h4>Age: {age}</h4>
       </div>
-      <div className="pet-feed">{/* this is where feed will live */}</div>
       <div className="play-game">
         <div className="console">
           <img src={MILCONSOLECOM} alt="console" />
@@ -102,9 +134,12 @@ const Profile = ({ user, authenticated }) => {
         <div className="console-pet">
           <img src={user.pets[0].img} alt="pet" />
         </div>
-        <div className="left-button" onClick={feedPet()}></div>
-        <div className="right-button" onClick={playWithPet()}></div>
-        <div className="surprise-button"></div>
+        <div className="left-button" onClick={() => feedPet()}></div>
+        <div className="right-button" onClick={() => playWithPet()}></div>
+        <button
+          className="surprise-button"
+          onClick={() => giftButton()}
+        ></button>
       </div>
     </div>
   ) : (
