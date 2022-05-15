@@ -229,6 +229,36 @@ button:hover{
   cursor: pointer;
 }
 
+.start {
+  height: 22px;
+  width: 32px;
+  background-color: transparent;
+  position: absolute;
+  top: 204px;
+  left: 590px;
+  border: none;
+}
+
+.start:hover{
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.sleep {
+  height: 22px;
+  width: 35px;
+  background-color: transparent;
+  position: absolute;
+  top: 204px;
+  left: 730px;
+  border: none;
+}
+
+.sleep:hover{
+  background-color: transparent;
+  cursor: pointer;
+}
+
 .gameplay button{
   height: 45px;
   width: 100px;

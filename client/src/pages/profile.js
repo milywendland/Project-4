@@ -104,7 +104,7 @@ const Profile = ({ user, authenticated }) => {
   const giftButton = () => {
     let surpriseGift = gift[Math.floor(Math.random() * gift.length)]
     console.log(surpriseGift)
-    // giftAdd(surpriseGift)
+    giftAdd(surpriseGift)
   }
 
   return user && authenticated ? (
@@ -134,6 +134,8 @@ const Profile = ({ user, authenticated }) => {
         <div className="console-pet">
           <img src={user.pets[0].img} alt="pet" />
         </div>
+        <button className="start" onClick={() => startGame()}></button>
+        <button className="sleep" onClick={() => goToSleep()}></button>
         <button className="left-button" onClick={() => feedPet()}></button>
         <button className="right-button" onClick={() => playWithPet()}></button>
         <button
