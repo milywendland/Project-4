@@ -67,7 +67,7 @@ const Profile = ({ user, authenticated }) => {
   // }
 
   return user && authenticated ? (
-    <div>
+    <div className="prof">
       <h2>Hey, {user.username}! </h2>
       <div className="choose">
         <button onClick={() => navigate(`/choosepet/${id}`)}>
