@@ -59,6 +59,11 @@ nav a:hover{
 
 .about a{
   color:rgb(70, 169, 255);
+  font-weight: 600;
+}
+
+.about a:hover{
+  color:rgb(126, 209, 0);
 }
 
 .haydie img{
