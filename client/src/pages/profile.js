@@ -134,8 +134,8 @@ const Profile = ({ user, authenticated }) => {
         <div className="console-pet">
           <img src={user.pets[0].img} alt="pet" />
         </div>
-        <div className="left-button" onClick={() => feedPet()}></div>
-        <div className="right-button" onClick={() => playWithPet()}></div>
+        <button className="left-button" onClick={() => feedPet()}></button>
+        <button className="right-button" onClick={() => playWithPet()}></button>
         <button
           className="surprise-button"
           onClick={() => giftButton()}

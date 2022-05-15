@@ -187,19 +187,31 @@ button:hover{
 .left-button{
   height: 35px;
   width: 25px;
-  background-color: aquamarine;
+  background-color: transparent;
   position: absolute;
   right: 665px;
   top: 455px;
+  border: none;
+}
+
+.left-button:hover{
+  background-color: transparent;
+  cursor: pointer;
 }
 
 .right-button{
   height: 35px;
   width: 25px;
-  background-color:rgb(209, 255, 23);
+  background-color:transparent;
   position: absolute;
   right: 570px;
   top: 455px;
+  border: none;
+}
+
+.right-button:hover{
+  background-color: transparent;
+  cursor: pointer;
 }
 
 .surprise-button{
@@ -209,8 +221,7 @@ button:hover{
   position: absolute;
   left: 660px;
   top: 204px;
-  border-color: black;
-  border-radius: 0;;
+  border: none;
 }
 
 .surprise-button:hover{
