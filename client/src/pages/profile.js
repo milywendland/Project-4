@@ -1,24 +1,10 @@
 import { useNavigate, useParams } from 'react-router-dom'
-import { useState, useEffect } from 'react'
-import axios from 'axios'
+
 import MILCONSOLECOM from '../images/MILCONSOLECOM.png'
 
 const Profile = ({ user, authenticated }) => {
   const navigate = useNavigate()
   const { id } = useParams()
-
-  const [pet, setPet] = useState('')
-
-  useEffect(() => {
-    const getPetByUserId = async () => {
-      const response = await axios.get(
-        `http://localhost:3001/api/gameplay/${id}`
-      )
-      console.log(response.data)
-      setPet(response.data.user.pets)
-    }
-    getPetByUserId()
-  }, [id])
 
   // let petDead = false
   // let hunger = 0
