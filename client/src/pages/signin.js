@@ -23,32 +23,35 @@ const SignIn = ({ setUser, toggleAuthenticated }) => {
 
   return (
     <div>
-      <div className="signin">
-        <form onSubmit={handleSubmit}>
-          <label>
-            {' '}
-            Username:
-            <input
-              type="text"
-              name="username"
-              placeholder="username"
-              onChange={handleChange}
-              value={formValues.username}
-            />
-          </label>
-          <label>
-            {' '}
-            Password:
-            <input
-              type="text"
-              name="password"
-              placeholder="password"
-              onChange={handleChange}
-              value={formValues.password}
-            />
-          </label>
-          <button type="submit">SUBMIT</button>
-        </form>
+      <div className="signin-wrapper">
+        <h2>Sign In</h2>
+        <div className="signin">
+          <form onSubmit={handleSubmit}>
+            <label>
+              {' '}
+              Username:
+              <input
+                type="text"
+                name="username"
+                placeholder="username"
+                onChange={handleChange}
+                value={formValues.username}
+              />
+            </label>
+            <label>
+              {' '}
+              Password:
+              <input
+                type="text"
+                name="password"
+                placeholder="password"
+                onChange={handleChange}
+                value={formValues.password}
+              />
+            </label>
+            <button type="submit">SUBMIT</button>
+          </form>
+        </div>
       </div>
       <div className="register-b">
         <h3>Sign Up Here:</h3>
