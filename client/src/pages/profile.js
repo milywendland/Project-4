@@ -6,51 +6,75 @@ const Profile = ({ user, authenticated }) => {
   const navigate = useNavigate()
   const { id } = useParams()
 
-  // let petDead = false
-  // let hunger = 0
-  // let boredom = 0
-  // let pottymeter = 0
+  let dead = false
+  let hunger = 0
+  let boredom = 0
+  let sleepy = 0
+  let pottymeter = 0
+  let age = 0
 
-  // const checkPetStatus = () => {
-  //   petStatus = setInterval(function () {
-  //     if (pet.maxhealth === 0) {
-  //       petDead = true
-  //       endIntervals()
-  //     }
-  //     if (pet.age === 25) {
-  //       killPet()
-  //     }
-  //   }, 2000)
-  // }
+  let boredomInterval
+  let hungerInterval
+  let sleepyInterval
+  let ageInterval
+  let petStatus
 
-  // const endIntervals = () => {
-  //   clearInterval(ageInterval)
-  //   clearInterval(petStatus)
-  //   clearInterval(hungerInterval)
-  //   clearInterval(boredomInteral)
-  // }
+  const startIntervals = () => {
+    hungerInterval = setInterval(function () {
+      hunger++
+    }, 5000)
+    boredomInterval = setInterval(function () {
+      boredom++
+    }, 3000)
+    sleepyInterval = setInterval(function () {
+      sleepy++
+    }, 6500)
+    ageInterval = setInterval(function () {
+      age++
+    }, 20000)
+  }
 
-  // const feedPet = () => {
-  //   if (hunger > 1) {
-  //     hunger--
-  //   }
-  // }
+  const checkPetStatus = () => {
+    petStatus = setInterval(function () {
+      if (boredom === 10 || hunger === 10 || sleepiness === 10) {
+        dead = true
+        endIntervals()
+      }
+      if (age === 25) {
+        dead = true
+      }
+    }, 2000)
+  }
 
-  // const playWithPet = () => {
-  //   if (boredom > 1) {
-  //     boredom--
-  //   }
-  // }
+  const endIntervals = () => {
+    clearInterval(ageInterval)
+    clearInterval(petStatus)
+    clearInterval(hungerInterval)
+    clearInterval(boredomInterval)
+    clearInterval(sleepyInterval)
+  }
 
-  // const goPotty = () => {
-  //   if (pottymeter > 1) {
-  //     pottymeter--
-  //   }
-  // }
+  const feedPet = () => {
+    if (hunger > 1) {
+      hunger--
+    }
+  }
 
-  // const killPet = () => {
-  //   alert(message, 'Your pet has died')
-  // }
+  const playWithPet = () => {
+    if (boredom > 1) {
+      boredom--
+    }
+  }
+
+  const goPotty = () => {
+    if (pottymeter > 1) {
+      pottymeter--
+    }
+  }
+
+  const killPet = () => {
+    alert(message, 'Your pet has died')
+  }
 
   return user && authenticated ? (
     <div className="prof">
@@ -71,8 +95,8 @@ const Profile = ({ user, authenticated }) => {
         <div className="console-pet">
           <img src={user.pets[0].img} alt="pet" />
         </div>
-        <div className="left-button"></div>
-        <div className="right-button"></div>
+        <div className="left-button" onClick={feedPet()}></div>
+        <div className="right-button" onClick={playWithPet()}></div>
         <div className="surprise-button"></div>
         <h3>
           You're taking care of {user.pets[0].name} the {user.pets[0].type}
