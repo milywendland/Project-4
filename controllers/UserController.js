@@ -2,11 +2,12 @@ const { User } = require('../models')
 const middleware = require('../middleware')
 
 const login = async (req, res) => {
+  console.log(req.body)
   try {
     const user = await User.findOne({
-      where: { username: req.body.username },
-      raw: true
+      username: req.body.username
     }).populate('pets')
+    console.log(user)
     if (
       user &&
       (await middleware.comparePassword(user.passwordDigest, req.body.password))

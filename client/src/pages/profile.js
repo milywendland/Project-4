@@ -139,9 +139,11 @@ const Profile = ({ user, authenticated }) => {
         <button onClick={() => navigate(`/deletePet/${id}`)}>Delete Pet</button>
       </div>
       <div className="petstatus">
-        <h3>
-          {user.pets[0].name} the {user.pets[0].type}
-        </h3>
+        {user.pets.length && (
+          <h3>
+            {user.pets[0].name} the {user.pets[0].type}
+          </h3>
+        )}
         <h4 id="hungers"> </h4>
         <h4 id="sleepies"> </h4>
         <h4 id="boredoms"> </h4>
@@ -153,7 +155,7 @@ const Profile = ({ user, authenticated }) => {
           <img src={MILCONSOLECOM} alt="console" />
         </div>
         <div className="console-pet">
-          <img src={user.pets[0].img} alt="pet" />
+          {user.pets.length && <img src={user.pets[0].img} alt="pet" />}
         </div>
         <div className="coffin"></div>
         <button className="start" onClick={() => startGame()}></button>
