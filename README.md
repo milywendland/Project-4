@@ -38,6 +38,7 @@
 - Friends Feature
 - Visit Friends
 - Disable Surprise Button after one click
+- Add more responsive design
 
 ---
 
