@@ -417,7 +417,7 @@ and (device-height: 896px)
   .left-button{
     height: 35px;
     width: 25px;
-    background-color: aquamarine;
+    background-color: trasnparent;
     position: absolute;
     right: 140px;
     top: 335px;
@@ -426,7 +426,7 @@ and (device-height: 896px)
   .right-button{
     height: 35px;
     width: 25px;
-    background-color:rgb(209, 255, 23);
+    background-color:transparent;
     position: absolute;
     right: 80px;
     top: 335px;
@@ -435,23 +435,45 @@ and (device-height: 896px)
   .surprise-button{
     height: 15px;
     width: 20px;
-    background-color: blueviolet;
+    background-color: transparent;
     position: absolute;
     left: 155px;
-    top: 17px;
+    top: 172px;
+  }
+
+  .start {
+    height: 20px;
+    width: 25px;
+    background-color: transparent;
+    position: absolute;
+    top: 172px;
+    left: 106px;
+    border: none;
   }
 
   .petstatus{
     position: absolute;
-    top: 550px;
+    top: 650px;
     margin-left: 90px;
-    height: 240px;
+    height: 160px;
     width: 250px;
     border: 2px solid rgb(70, 169, 255);
     font-family: 'Play', sans-serif;
     color:rgb(70, 169, 255);
   }
   
+
+
+  .instructions{
+    height: 205px;
+    width: 185px;
+    border: 2px solid hotpink;
+    color: rgb(70, 169, 255);
+    font-size: 12px;
+    position: absolute;
+    top: 900px;
+  }
+
   .petstatus h3{
     color:hotpink;
   }
@@ -533,5 +555,9 @@ and (device-height: 896px)
   
   .kitsune-create img{
     height: 75px;
+  }
+
+  .home img {
+    height:350px;
   }
 }
