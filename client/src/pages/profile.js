@@ -1,6 +1,7 @@
 import { useNavigate, useParams } from 'react-router-dom'
-import { useEffect, useState } from 'react'
+import { createElement, useEffect, useState } from 'react'
 import axios from 'axios'
+import minecraftcoffin from '../images/minecraftcoffin.png'
 
 import MILCONSOLECOM from '../images/MILCONSOLECOM.png'
 
@@ -8,7 +9,6 @@ const Profile = ({ user, authenticated }) => {
   const navigate = useNavigate()
   const { id } = useParams()
   const [gift, setGift] = useState('')
-  const [surprise, setSurprise] = useState('')
 
   let dead = false
   let hunger = 0
@@ -76,8 +76,6 @@ const Profile = ({ user, authenticated }) => {
     }
   }
 
-  const killPet = () => {}
-
   const startGame = () => {
     startIntervals()
     checkPetStatus()
@@ -134,6 +132,7 @@ const Profile = ({ user, authenticated }) => {
         <div className="console-pet">
           <img src={user.pets[0].img} alt="pet" />
         </div>
+        <div className="coffin"></div>
         <button className="start" onClick={() => startGame()}></button>
         <button className="sleep" onClick={() => goToSleep()}></button>
         <button className="left-button" onClick={() => feedPet()}></button>
