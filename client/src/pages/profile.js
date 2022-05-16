@@ -1,7 +1,6 @@
 import { useNavigate, useParams } from 'react-router-dom'
 import { createElement, useEffect, useState } from 'react'
 import axios from 'axios'
-import minecraftcoffin from '../images/minecraftcoffin.png'
 
 import MILCONSOLECOM from '../images/MILCONSOLECOM.png'
 
@@ -157,7 +156,6 @@ const Profile = ({ user, authenticated }) => {
         <div className="console-pet">
           {user.pets.length && <img src={user.pets[0].img} alt="pet" />}
         </div>
-        <div className="coffin"></div>
         <button className="start" onClick={() => startGame()}></button>
         <button className="sleep" onClick={() => goToSleep()}></button>
         <button className="left-button" onClick={() => feedPet()}></button>
