@@ -54,7 +54,7 @@ const Profile = ({ user, authenticated }) => {
         sleepyh4.innerText = ''
         boredomh4.innerText = ''
         hungerh4.innerText = ''
-        deadh4.innerText = `is DEAD!!!`
+        deadh4.innerText = `is DEAD!!! RIP KING!`
         endIntervals()
       }
       if (age === 25) {
@@ -67,7 +67,7 @@ const Profile = ({ user, authenticated }) => {
         deadh4.innerText = `Died at the ripe age of 25. RIP KING!`
         endIntervals()
       }
-    }, 2000)
+    }, 1000)
   }
 
   const endIntervals = () => {
@@ -79,27 +79,32 @@ const Profile = ({ user, authenticated }) => {
   }
 
   const feedPet = () => {
-    if (hunger >= 1) {
+    if (hunger > 0) {
       hunger--
+      hungerh4.innerText = `Hunger: ${hunger}`
+      return hunger
     }
   }
 
   const playWithPet = () => {
-    if (boredom >= 1) {
+    if (boredom > 0) {
       boredom--
+      boredomh4.innerText = `Boredom: ${boredom}`
+      return boredom
     }
   }
 
   const goToSleep = () => {
-    if (sleepy >= 1) {
+    if (sleepy > 0) {
       sleepy--
+      sleepyh4.innerText = `Sleepiness: ${sleepy}`
+      return sleepy
     }
   }
 
   const startGame = () => {
     startIntervals()
     checkPetStatus()
-    console.log('start')
   }
 
   useEffect(() => {
@@ -113,10 +118,16 @@ const Profile = ({ user, authenticated }) => {
   const giftAdd = () => {
     if (gift.buff === 'Knowledge') {
       boredom--
+      boredomh4.innerText = `Boredom: ${boredom}`
+      return boredom
     } else if (gift.buff === 'Snack') {
       hunger--
+      hungerh4.innerText = `Hunger: ${hunger}`
+      return hunger
     } else if (gift.buff == 'Mood') {
       boredom--
+      boredomh4.innerText = `Boredom: ${boredom}`
+      return boredom
     }
   }
 
