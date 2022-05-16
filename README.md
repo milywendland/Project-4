@@ -42,7 +42,7 @@
 
 ---
 
-### **Creidts**
+### **Credits**
 
 [setInterval](https://www.bitdegree.org/learn/javascript-setinterval)
 [CSSFloatAnimation](https://www.geeksforgeeks.org/css-floating-animation/)
