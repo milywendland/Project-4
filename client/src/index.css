@@ -169,15 +169,7 @@ button:hover{
   animation: float 3s ease-out infinite;
 }
 
-.coffin{
-  height: 315px;
-  width: 195px;
-  position:absolute;
-  top: 275px;
-  left: 574px;
-  border-radius: 16px;;
-  background-image: url(https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fclipart-library.com%2Fdata_images%2F384039.png&f=1&nofb=1);
-}
+
 
 @keyframes float {
   50% {
@@ -267,6 +259,21 @@ button:hover{
 .sleep:hover{
   background-color: transparent;
   cursor: pointer;
+}
+
+.instructions{
+  height: 255px;
+  width: 300px;
+  border: 2px solid hotpink;
+  color: rgb(70, 169, 255);
+  position: absolute;
+  top: 470px;
+  right: 100px;
+}
+
+.instructions h3{
+  color: hotpink;
+  text-decoration:underline;
 }
 
 .gameplay button{
@@ -364,6 +371,10 @@ button:hover{
 
 .kitsune-create img{
   height: 150px;
+}
+
+.deletehim img{
+  height:300px;
 }
 
 

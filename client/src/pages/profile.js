@@ -10,6 +10,12 @@ const Profile = ({ user, authenticated }) => {
   const { id } = useParams()
   const [gift, setGift] = useState('')
 
+  const hungerh4 = document.getElementById('hungers')
+  const sleepyh4 = document.getElementById('sleepies')
+  const boredomh4 = document.getElementById('boredoms')
+  const ageh4 = document.getElementById('agies')
+  const deadh4 = document.getElementById('not-alive')
+
   let dead = false
   let hunger = 0
   let boredom = 0
@@ -25,26 +31,41 @@ const Profile = ({ user, authenticated }) => {
   const startIntervals = () => {
     hungerInterval = setInterval(function () {
       hunger++
+      hungerh4.innerText = `Hunger: ${hunger}`
     }, 5000)
     boredomInterval = setInterval(function () {
       boredom++
-    }, 3000)
+      boredomh4.innerText = `Boredom: ${boredom}`
+    }, 6000)
     sleepyInterval = setInterval(function () {
       sleepy++
-    }, 6500)
+      sleepyh4.innerText = `Sleepiness: ${sleepy}`
+    }, 7500)
     ageInterval = setInterval(function () {
       age++
-    }, 20000)
+      ageh4.innerText = `Age: ${age}`
+    }, 30000)
   }
 
   const checkPetStatus = () => {
     petStatus = setInterval(function () {
       if (boredom === 10 || hunger === 10 || sleepy === 10) {
         dead = true
+        ageh4.innerText = ''
+        sleepyh4.innerText = ''
+        boredomh4.innerText = ''
+        hungerh4.innerText = ''
+        deadh4.innerText = `is DEAD!!!`
         endIntervals()
       }
       if (age === 25) {
         dead = true
+        dead = true
+        ageh4.innerText = ''
+        sleepyh4.innerText = ''
+        boredomh4.innerText = ''
+        hungerh4.innerText = ''
+        deadh4.innerText = `Died at the ripe age of 25. RIP KING!`
         endIntervals()
       }
     }, 2000)
@@ -79,6 +100,7 @@ const Profile = ({ user, authenticated }) => {
   const startGame = () => {
     startIntervals()
     checkPetStatus()
+    console.log('start')
   }
 
   useEffect(() => {
@@ -114,16 +136,17 @@ const Profile = ({ user, authenticated }) => {
         </button>
       </div>
       <div className="delete">
-        <button>Delete Pet</button>
+        <button onClick={() => navigate(`/deletePet/${id}`)}>Delete Pet</button>
       </div>
       <div className="petstatus">
         <h3>
           {user.pets[0].name} the {user.pets[0].type}
         </h3>
-        <h4>Hunger: {hunger}</h4>
-        <h4>Sleepiness: {sleepy}</h4>
-        <h4>Boredom: {boredom}</h4>
-        <h4>Age: {age}</h4>
+        <h4 id="hungers"> </h4>
+        <h4 id="sleepies"> </h4>
+        <h4 id="boredoms"> </h4>
+        <h4 id="agies"> </h4>
+        <h4 id="not-alive"> </h4>
       </div>
       <div className="play-game">
         <div className="console">
@@ -141,6 +164,14 @@ const Profile = ({ user, authenticated }) => {
           className="surprise-button"
           onClick={() => giftButton()}
         ></button>
+        <div className="instructions">
+          <h3>Instructions:</h3>
+          <h4>Start Button = Green</h4>
+          <h4>Sleep Button = Orange</h4>
+          <h4>Feed Button = Left Oval</h4>
+          <h4>Play Button = Right Oval</h4>
+          <h4>Surprise Button = Find it yourself :P</h4>
+        </div>
       </div>
     </div>
   ) : (

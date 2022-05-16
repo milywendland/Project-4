@@ -9,6 +9,7 @@ import ChoosePet from './pages/choosepet'
 import Profile from './pages/profile'
 import EditPet from './pages/editpet'
 import SignIn from './pages/signin'
+import DeletePet from './pages/deletepet'
 import { useState, useEffect } from 'react'
 import { CheckSession } from './services/auth'
 
@@ -53,6 +54,10 @@ function App() {
                   toggleAuthenticated={toggleAuthenticated}
                 />
               }
+            />
+            <Route
+              path="/deletepet/:id"
+              element={<DeletePet user={user} authenticated={authenticated} />}
             />
           </Routes>
         </main>

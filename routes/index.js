@@ -13,6 +13,7 @@ router.get('/gifts', giftController.getAllGifts)
 router.put('/choosepet/edit/:id', petController.editPet)
 router.post('/choosepet/:userid', petController.createPet)
 router.get('/profile/:id', petController.getUser)
+router.delete('/profile/:id', petController.deletePet)
 
 // - auth - //
 router.post('/register', authController.register)
